@@ -11,7 +11,7 @@ VEL_X=1
 VEL_Y=1
 
 # Functions
-# Cleanup
+# Cleanup old lines
 cleanup () {
     reset_cursor_pos $POS_X $POS_Y
     printf "\n\n"
@@ -93,7 +93,6 @@ update () {
 };
 
 # Disable terminal cursor
-#printf \"\n\n\"; cleanup; 
 trap "cleanup; tput cnorm; stty echo" EXIT
 tput civis
 stty -echo
